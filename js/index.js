@@ -79,3 +79,83 @@ chars[2] = 'F'
 console.log(chars)
 chars.pop() // pop() remove do final
 
+// object literals
+
+const product = {
+    productName: 'Camisa',
+    price: 20,
+    inStock: true,
+    size: ['p', 'm', 'g']
+}
+
+console.log(product.size[product.size.length-1])
+
+console.log(product.price)
+
+console.log(product['price'])
+
+// desestruturação
+
+let { productName, price } = product
+console.log(price)
+price = 22 // mesmo price estando dentro de uma variável const, é possível manipulá-la 
+console.log(price)
+
+const vector = [3,7,2,45,99] 
+let [ v1, v2, ...outroV] = vector
+console.log(outroV) // 2 45 99
+
+let [ a1, a2 ] = vector
+console.log(a1, a2) // 3 7
+
+// JSON - JavaScript Object Notation
+// XML é concorrente do JSON
+
+// criando o objeto cachorro
+const dog = {
+    name: 'Scooby',
+    age: 10
+}
+console.log(dog)
+
+const dogJSON = JSON.stringify(dog) // transformando um objeto em JSON
+console.log(dogJSON)
+
+const dogObject = JSON.parse(dogJSON) // passando um JSON para objeto
+console.log(dogObject)
+
+const jsonErrado = '{"primeiro":"dado1","segundo":222}'
+
+//D1
+
+const vet = [1, 2, 3, 4, 5]
+
+const obj = {
+    n1: vet[0],
+    n2: vet[1],
+    n3: vet[2],
+    n4: vet[3],
+    n5: vet[4]
+}
+
+let { n1, n2, n3, n4, n5 } = obj
+
+console.log(JSON.stringify({n1,n2,n3,n4,n5}))
+
+// D2
+
+let num1 = 4
+let num2 = 2
+
+const cal = {
+    mult: num1 * num2,
+    soma: num1 + num2,
+    div: num1/num2,
+    sub: num1 - num2
+}
+
+const result = JSON.stringify(cal)
+console.log(result) 
+
+
+// estruturas, métodos de listas, funções

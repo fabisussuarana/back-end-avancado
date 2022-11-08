@@ -206,7 +206,7 @@ names.forEach(function(name){
 
 // console.log(names[0] + names[1])
 
-// Map
+// Map - mapeia, ou seja, passa por cada índice do vetor
 const modifiedNames = names.map(function(name){ //names.map permite modificar name
     if (name == 'Paulo') {
         return ('Paulo Sampaio')
@@ -248,9 +248,82 @@ console.log(myFunction('Paulo', 'Sampaio')) //Para que a função seja executada
 
 // arrow function === função anônima
 // function(data){ return 0; }
-//(data) => 0 
+//(data) => 0 --> anônima
 
 const myArrowFunction = (a, b) => a+b
 console.log(myArrowFunction(5,2))
 
-() => ( (x=7) => (x+5) )
+const testArrow = () => ((x=7), ()=>(x+5)) ()
+console.log(testArrow)
+
+// const namesLength = names.map(({length}) => length)  ---> outra forma de fazer
+const namesLength = names.map(value => value.length) 
+console.log(namesLength)
+
+// orientação a objeto
+
+class Product{
+    constructor(name, price){
+        this.name = name
+        this.price = price
+    }
+    productDetails(){
+        return `O nome do produto é ${this.name} e o preço é ${this.price}.`
+    }
+    static test(){
+        console.log('Testando método estático...')
+    }
+}
+Number.parseInt('10') // convertendo a string para número
+
+// herança
+
+class Tenis extends Product{
+    constructor(name, price, size){
+        super(name, price) // usando o construtor da classepai, não necessitando copiá-la novamente
+    }
+    showNumber(){
+        return `O tamanho do ${this.name} é ${this.size}`
+    }
+    productDetails(){
+        return `O nome do produto é ${this.name}, no tamanho ${this.size} o preço é ${this.price}.`
+    }
+}
+
+// instanciando um objeto Product
+const shirt = new Product('Camisa azul', 20) 
+console.log(shirt.productDetails())
+const sock = new Product('Meia branca', 5)
+console.log(sock.productDetails())
+Product.test()
+const tenis = new Tenis('tenis All Star', 100, '37')
+console.log(tenis.showNumber())
+tenis.this = 'tenis All Star'
+
+// DOM - DOCUMENT OBJECT MODEL
+
+console.log(document.getElementById('titulo'))
+console.log(document.getElementsByClassName('text'))
+
+const texts = document.querySelector('.text')
+console.log(texts)
+
+texts.forEach((data) => console.log(data))
+
+texts[0].textContent = 'Estou alterando o primeiro parágrafo'
+
+texts[0].innerHTML = '<span>Testando uma alteração...</span>'
+
+texts[1].style.backgroundColor = 'red'
+
+texts[2].remove()
+
+const button = document.querySelector('#btn')
+
+button.addEventListener('click', (event) => (texts[3].style.backgroundColor='orange'))
+
+//callbacks
+
+// promises
+
+// programação assíncrona

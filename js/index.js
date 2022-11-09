@@ -300,27 +300,36 @@ const tenis = new Tenis('tenis All Star', 100, '37')
 console.log(tenis.showNumber())
 tenis.this = 'tenis All Star'
 
-// DOM - DOCUMENT OBJECT MODEL
+// DOM - Document Object Model
+// cria uma árvore que representa a estrutura do documento HTML, indicando qual elemento está dentro de qual outro elemento
+// através do objeto nativo document, é possível executar métodos que permitem obter e manipular o HTML
 
+// seleciona elemento pelo id; pouco recomendado fazer dessa forma
 console.log(document.getElementById('titulo'))
-console.log(document.getElementsByClassName('text'))
 
-const texts = document.querySelector('.text')
+// seleciona vários elementos pelo nome da classe e cria um array
+const texts = document.querySelectorAll('.text')
 console.log(texts)
 
 texts.forEach((data) => console.log(data))
 
-texts[0].textContent = 'Estou alterando o primeiro parágrafo'
+// manipula o conteúdo de um elemento
+texts[0].textContent = 'Estou alterando o primeiro parágrafo.'
 
+// insere conteúdo (string que pode descrever um HTML) em um elemento
 texts[0].innerHTML = '<span>Testando uma alteração...</span>'
 
+// altera propriedades do css inline do elemento
 texts[1].style.backgroundColor = 'red'
 
+// remove o elemento
 texts[2].remove()
 
+// adicionando evento
+// seleciona um elemento pelo id, armazenando em uma variável
 const button = document.querySelector('#btn')
-
-button.addEventListener('click', (event) => (texts[3].style.backgroundColor='orange'))
+// rotina para a execução de alteração no estilo de um elemento a partir do clique
+button.addEventListener('click',()=>(texts[3].style.backgroundColor='orange'))
 
 //callbacks
 

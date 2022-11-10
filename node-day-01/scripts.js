@@ -43,5 +43,9 @@ function a() {
     let minuto = data.getMinutes()
     let segundo = data.getSeconds()
 
-    console.log('${hora}')
+    console.log('${hora}:${minuto}:${segundo}')
 }
+
+setTimeout(a, 5000)
+setTimeout(a, 5000)
+setTimeout(a, 5000)

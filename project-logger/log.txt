@@ -1,0 +1,6 @@
+{"total":"16128 MB","freeMem":"10340 MB","percents":"35% em uso"}
+{"total":"16128 MB","freeMem":"10340 MB","percents":"35% em uso"}
+{"total":"16128 MB","freeMem":"10332 MB","percents":"35% em uso"}
+{"total":"16128 MB","freeMem":"10346 MB","percents":"35% em uso"}
+{"total":"16128 MB","freeMem":"10342 MB","percents":"35% em uso"}
+{"total":"16128 MB","freeMem":"10344 MB","percents":"35% em uso"}
